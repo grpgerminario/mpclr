@@ -54,6 +54,7 @@ program mpclr, eclass properties(svyb)
 	
 	/*Gather the min/max treatment levels; subminT is one above min and helpful in loops*/
 	
+		
 	qui sum `T' if `touse'
 	local minT = r(min)
 	local maxT = r(max)
@@ -151,7 +152,7 @@ program mpclr, eclass properties(svyb)
 							di ""
 							di "Begin bootstrap for `x'B`t`i''`s`i''_`a' ... "
 
-							svy bootstrap _b, saving(`cosam_`x'_`i'_`a''.dta, double replace) noheader notable:  mpbounds `y' `T' if `touse', ymin(`ymin') ymax(`ymax') `att' `nmts' `nmtr' moret(`moret') mores(`mores') ul(`x') contrt(`t`i'') contrs(`s`i'') asmptn(`a') 
+							svy bootstrap _b, saving(`cosam_`x'_`i'_`a''.dta, double replace) noheader notable:  mpbounds `y' `T' if `touse', ymin(`ymin') ymax(`ymax') `att' `nmts' `nmtr' moret(`moret') mores(`mores') ul(`x') contrt(`t`i'') contrs(`s`i'') asmptn(`a')
 
 							matrix b`x'`t`i''`s`i''_`a' = e(b)'
 							matrix Vb`x'`t`i''`s`i''_`a' = e(V)
@@ -191,7 +192,7 @@ program mpclr, eclass properties(svyb)
 							di ""
 							di "Begin bootstrap for `x'B`t`i''`s`i''_`a' ... "
 
-							svy brr _b, saving(`cosam_`x'_`i'_`a''.dta, double replace) noheader notable:  mpbounds `y' `T' if `touse', ymin(`ymin') ymax(`ymax') `att' `nmts' `nmtr' moret(`moret') mores(`mores') ul(`x') contrt(`t`i'') contrs(`s`i'') asmptn(`a') 
+							svy brr _b, saving(`cosam_`x'_`i'_`a''.dta, double replace) noheader notable:  mpbounds `y' `T' if `touse', ymin(`ymin') ymax(`ymax') `att' `nmts' `nmtr' moret(`moret') mores(`mores') ul(`x') contrt(`t`i'') contrs(`s`i'') asmptn(`a')
 
 							matrix b`x'`t`i''`s`i''_`a' = e(b)'
 							matrix Vb`x'`t`i''`s`i''_`a' = e(V)
@@ -293,7 +294,7 @@ program mpclr, eclass properties(svyb)
 						di ""
 						di "Begin bootstrap for `x'B`t'`k'_`a' ... "
 
-						svy bootstrap _b, saving(`cosav_`x'_`t'_`a''.dta, double replace) noheader notable:  mpbounds `y' `T' if `touse', ymin(`ymin') ymax(`ymax') `att' `nmts' `nmtr' miv(`miv') bins(`bins') `discretemiv' `nmiv' moret(`moret') mores(`mores') ul(`x') contrt(`t') contrs(`k') asmptn(`a') 
+						svy bootstrap _b, saving(`cosav_`x'_`t'_`a''.dta, double replace) noheader notable:  mpbounds `y' `T' if `touse', ymin(`ymin') ymax(`ymax') `att' `nmts' `nmtr' miv(`miv') bins(`bins') `discretemiv' `nmiv' moret(`moret') mores(`mores') ul(`x') contrt(`t') contrs(`k') asmptn(`a')
 
 						matrix b`x'`t'`k'_`a' = e(b)'
 
@@ -311,7 +312,7 @@ program mpclr, eclass properties(svyb)
 							di ""
 							di "Begin bootstrap for `x'B`t`i''`s`i''_`a' ... "
 
-							svy bootstrap _b, saving(`cosavm_`x'_`i'_`a''.dta, double replace) noheader notable:  mpbounds `y' `T' if `touse', ymin(`ymin') ymax(`ymax') `att' `nmts' `nmtr' miv(`miv') bins(`bins') `discretemiv' `nmiv' moret(`moret') mores(`mores') ul(`x') contrt(`t`i'') contrs(`s`i'') asmptn(`a') 
+							svy bootstrap _b, saving(`cosavm_`x'_`i'_`a''.dta, double replace) noheader notable:  mpbounds `y' `T' if `touse', ymin(`ymin') ymax(`ymax') `att' `nmts' `nmtr' miv(`miv') bins(`bins') `discretemiv' `nmiv' moret(`moret') mores(`mores') ul(`x') contrt(`t`i'') contrs(`s`i'') asmptn(`a')
 
 							matrix b`x'`t`i''`s`i''_`a' = e(b)'
 							matrix Vb`x'`t`i''`s`i''_`a' = e(V)
@@ -333,7 +334,7 @@ program mpclr, eclass properties(svyb)
 						di ""
 						di "Begin bootstrap for `x'B`t'`k'_`a' ... "
 
-						svy brr _b, saving(`cosav_`x'_`t'_`a''.dta, double replace) noheader notable:  mpbounds `y' `T' if `touse', ymin(`ymin') ymax(`ymax') `att' `nmts' `nmtr' miv(`miv') bins(`bins') `discretemiv' `nmiv' moret(`moret') mores(`mores') ul(`x') contrt(`t') contrs(`k') asmptn(`a') 
+						svy brr _b, saving(`cosav_`x'_`t'_`a''.dta, double replace) noheader notable:  mpbounds `y' `T' if `touse', ymin(`ymin') ymax(`ymax') `att' `nmts' `nmtr' miv(`miv') bins(`bins') `discretemiv' `nmiv' moret(`moret') mores(`mores') ul(`x') contrt(`t') contrs(`k') asmptn(`a')
 
 						matrix b`x'`t'`k'_`a' = e(b)'
 
@@ -349,7 +350,7 @@ program mpclr, eclass properties(svyb)
 							di ""
 							di "Begin bootstrap for `x'B`t`i''`s`i''_`a' ... "
 
-							svy brr _b, saving(`cosavm_`x'_`i'_`a''.dta, double replace) noheader notable:  mpbounds `y' `T' if `touse', ymin(`ymin') ymax(`ymax') `att' `nmts' `nmtr' miv(`miv') bins(`bins') `discretemiv' `nmiv' moret(`moret') mores(`mores') ul(`x') contrt(`t`i'') contrs(`s`i'') asmptn(`a') 
+							svy brr _b, saving(`cosavm_`x'_`i'_`a''.dta, double replace) noheader notable:  mpbounds `y' `T' if `touse', ymin(`ymin') ymax(`ymax') `att' `nmts' `nmtr' miv(`miv') bins(`bins') `discretemiv' `nmiv' moret(`moret') mores(`mores') ul(`x') contrt(`t`i'') contrs(`s`i'') asmptn(`a')
 
 							matrix b`x'`t`i''`s`i''_`a' = e(b)'
 							matrix Vb`x'`t`i''`s`i''_`a' = e(V)
@@ -2042,9 +2043,7 @@ if "`att'" != "" {
 		}
 	}
 
-	*********************
-	***ATE**************
-	
+
 	else {
 		
 		if strpos("${bset}","mtr") != 0 {
@@ -2055,14 +2054,14 @@ if "`att'" != "" {
 			forval t=`subminT'/`maxT' {
 				local k=`t'-1
 		
-				di "ATE(`t',`k')" "{col 15}[" %-12.3f max(`e(LB`t'`k'_mtr)',0) "," %12.3f `e(UB`t'`k'_mtr)' "]" 
+				di "ATT(`t',`k')" "{col 15}[" %-12.3f max(`e(LB`t'`k'_mtr)',0) "," %12.3f `e(UB`t'`k'_mtr)' "]" 
 				di "`level'% CLR CI" "{col 15}(" %-12.3f max(`e(ciLB`t'`k'_mtr)',0) "," %12.3f `e(ciUB`t'`k'_mtr)' ")"
 				di ""
 			}
 		
 			if "`moret'" != "" {
 				forval i=1/`conta' {
-					di "ATE(`t`i'',`s`i'')" "{col 15}[" %-12.3f max(`e(LB`t`i''`s`i''_mtr)',0) "," %12.3f `e(UB`t`i''`s`i''_mtr)' "]"
+					di "ATT(`t`i'',`s`i'')" "{col 15}[" %-12.3f max(`e(LB`t`i''`s`i''_mtr)',0) "," %12.3f `e(UB`t`i''`s`i''_mtr)' "]"
 					di "`level'% CLR CI" "{col 15}(" %-12.3f max(`e(ciLB`t`i''`s`i''_mtr)',0) "," %12.3f `e(ciUB`t`i''`s`i''_mtr)' ")"
 					di ""
 				}
@@ -2080,14 +2079,14 @@ if "`att'" != "" {
 			forval t=`subminT'/`maxT' {
 				local k=`t'-1
 		
-				di "ATE(`t',`k')" "{col 15}[" %-12.3f max(`e(LB`t'`k'_mtsr)',0) "," %12.3f `e(UB`t'`k'_mtsr)' "]" 
+				di "ATT(`t',`k')" "{col 15}[" %-12.3f max(`e(LB`t'`k'_mtsr)',0) "," %12.3f `e(UB`t'`k'_mtsr)' "]" 
 				di "`level'% CLR CI" "{col 15}(" %-12.3f max(`e(ciLB`t'`k'_mtsr)',0) "," %12.3f `e(ciUB`t'`k'_mtsr)' ")"
 				di ""
 			}
 		
 			if "`moret'" != "" {
 				forval i=1/`conta' {
-					di "ATE(`t`i'',`s`i'')" "{col 15}[" %-12.3f max(`e(LB`t`i''`s`i''_mtsr)',0) "," %12.3f `e(UB`t`i''`s`i''_mtsr)' "]"
+					di "ATT(`t`i'',`s`i'')" "{col 15}[" %-12.3f max(`e(LB`t`i''`s`i''_mtsr)',0) "," %12.3f `e(UB`t`i''`s`i''_mtsr)' "]"
 					di "`level'% CLR CI" "{col 15}(" %-12.3f max(`e(ciLB`t`i''`s`i''_mtsr)',0) "," %12.3f `e(ciUB`t`i''`s`i''_mtsr)' ")"
 					di ""
 				}
@@ -2109,14 +2108,14 @@ if "`att'" != "" {
 					forval t=`subminT'/`maxT' {
 						local k=`t'-1
 
-						di "ATE(`t',`k')" "{col 15}[" %-12.3f `e(LB`t'`k'_mivs)' "," %12.3f `e(UB`t'`k'_mivs)' "]" 
+						di "ATT(`t',`k')" "{col 15}[" %-12.3f `e(LB`t'`k'_mivs)' "," %12.3f `e(UB`t'`k'_mivs)' "]" 
 						di "`level'% CLR CI" "{col 15}(" %-12.3f `e(ciLB`t'`k'_mivs)' "," %12.3f `e(ciUB`t'`k'_mivs)' ")"
 						di ""
 					}
 
 					if "`moret'" != "" {
 						forval i=1/`conta' {
-							di "ATE(`t`i'',`s`i'')" "{col 15}[" %-12.3f `e(LB`t`i''`s`i''_mivs)' "," %12.3f `e(UB`t`i''`s`i''_mivs)' "]"
+							di "ATT(`t`i'',`s`i'')" "{col 15}[" %-12.3f `e(LB`t`i''`s`i''_mivs)' "," %12.3f `e(UB`t`i''`s`i''_mivs)' "]"
 							di "`level'% CLR CI" "{col 15}(" %-12.3f `e(ciLB`t`i''`s`i''_mivs)' "," %12.3f `e(ciUB`t`i''`s`i''_mivs)' ")"
 							di ""
 						}
@@ -2134,14 +2133,14 @@ if "`att'" != "" {
 					forval t=`subminT'/`maxT' {
 						local k=`t'-1
 
-						di "ATE(`t',`k')" "{col 15}[" %-12.3f max(`e(LB`t'`k'_mivr)',0) "," %12.3f `e(UB`t'`k'_mivr)' "]" 
+						di "ATT(`t',`k')" "{col 15}[" %-12.3f max(`e(LB`t'`k'_mivr)',0) "," %12.3f `e(UB`t'`k'_mivr)' "]" 
 						di "`level'% CLR CI" "{col 15}(" %-12.3f max(`e(ciLB`t'`k'_mivr)',0) "," %12.3f `e(ciUB`t'`k'_mivr)' ")"
 						di ""
 					}
 
 					if "`moret'" != "" {
 						forval i=1/`conta' {
-							di "ATE(`t`i'',`s`i'')" "{col 15}[" %-12.3f max(`e(LB`t`i''`s`i''_mivr)',0) "," %12.3f `e(UB`t`i''`s`i''_mivr)' "]"
+							di "ATT(`t`i'',`s`i'')" "{col 15}[" %-12.3f max(`e(LB`t`i''`s`i''_mivr)',0) "," %12.3f `e(UB`t`i''`s`i''_mivr)' "]"
 							di "`level'% CLR CI" "{col 15}(" %-12.3f max(`e(ciLB`t`i''`s`i''_mivr)',0) "," %12.3f `e(ciUB`t`i''`s`i''_mivr)' ")"
 							di ""
 						}
@@ -2159,14 +2158,14 @@ if "`att'" != "" {
 					forval t=`subminT'/`maxT' {
 						local k=`t'-1
 
-						di "ATE(`t',`k')" "{col 15}[" %-12.3f max(`e(LB`t'`k'_mivsr)',0) "," %12.3f `e(UB`t'`k'_mivsr)' "]" 
+						di "ATT(`t',`k')" "{col 15}[" %-12.3f max(`e(LB`t'`k'_mivsr)',0) "," %12.3f `e(UB`t'`k'_mivsr)' "]" 
 						di "`level'% CLR CI" "{col 15}(" %-12.3f max(`e(ciLB`t'`k'_mivsr)',0) "," %12.3f `e(ciUB`t'`k'_mivsr)' ")"
 						di ""
 					}
 
 					if "`moret'" != "" {
 						forval i=1/`conta' {
-							di "ATE(`t`i'',`s`i'')" "{col 15}[" %-12.3f max(`e(LB`t`i''`s`i''_mivsr)',0) "," %12.3f `e(UB`t`i''`s`i''_mivsr)' "]"
+							di "ATT(`t`i'',`s`i'')" "{col 15}[" %-12.3f max(`e(LB`t`i''`s`i''_mivsr)',0) "," %12.3f `e(UB`t`i''`s`i''_mivsr)' "]"
 							di "`level'% CLR CI" "{col 15}(" %-12.3f max(`e(ciLB`t`i''`s`i''_mivsr)',0) "," %12.3f `e(ciUB`t`i''`s`i''_mivsr)' ")"
 							di ""
 						}
@@ -2179,6 +2178,10 @@ if "`att'" != "" {
 	}
 
 }
+
+	*********************
+	***ATE**************
+	
 
 else {
 
